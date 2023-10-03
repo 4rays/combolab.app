@@ -26,13 +26,14 @@ const today = new Date();
     <ul role="list" class="link-card-grid">
       <Card
       href="/"
-      title="Apps"
-      body="Coming soon..."
+      title="Combolab"
+      body="A reference app for creating and sharing Street Fighter 6™ combos."
+      image="/public/combolab.png"
       />
       <Card
       href="mailto:contact@4rays.net"
       title="Contact"
-      body="Have any questions? Get in touch."
+      body="Feel free to email us if you have any inquiries."
       />
     </ul>
   </main>
@@ -49,7 +50,7 @@ const today = new Date();
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
-    color: white;
+    color: var(--text-primary-color);
     font-size: 20px;
     line-height: 1.6;
   }
@@ -59,7 +60,7 @@ const today = new Date();
     width: 16rem;
     height: 16rem;
     margin: 3rem auto 0;
-    stroke: aliceblue;
+    stroke: var(--logo-color);
     stroke-width: 2px;
     stroke-dasharray: 200;
     stroke-dashoffset: 400;
@@ -114,6 +115,7 @@ const today = new Date();
     letter-spacing: .1em;
     text-align: center;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 50%);
+    color: var(--text-primary-color);
+    opacity: 0.8;
   }
 </style>

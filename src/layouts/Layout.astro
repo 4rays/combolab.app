@@ -23,10 +23,24 @@ const { title } = Astro.props;
 <style is:global>
   :root {
     --accent: 237, 103, 44;
+    --background-color: #13151a;
+    --card-color: #23262d;
+    --text-primary-color: #fff;
+    --logo-color: aliceblue;
   }
-  
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --accent: 237, 103, 44;
+      --background-color: #fff;
+      --card-color: aliceblue;
+      --text-primary-color: #23262d;
+      --logo-color: #e6440e;
+    }
+  }
+
   html {
     font-family: system-ui, sans-serif;
-    background: #13151a;
+    background: var(--background-color);
   }
 </style>
