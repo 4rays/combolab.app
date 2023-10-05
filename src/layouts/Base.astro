@@ -1,0 +1,96 @@
+---
+import {SITE_TITLE, SITE_DESCRIPTION} from "@consts";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+let {
+  title = SITE_TITLE, 
+  description = SITE_DESCRIPTION
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Icons -->
+    <!-- <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=2"
+    />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#5bbad5" />
+    <link rel="shortcut icon" href="/favicon.ico?v=2" />
+    <meta name="apple-mobile-web-app-title" content="Reda Lemeden" />
+    <meta name="application-name" content="Reda Lemeden" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#000000" /> -->
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    
+    <!-- Additional Meta Tags -->
+    <slot name="head" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 237, 103, 44;
+    --background-color: #13151a;
+    --card-color: #23262d;
+    --text-primary-color: #fff;
+    --logo-color: aliceblue;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --accent: 237, 103, 44;
+      --background-color: #fff;
+      --card-color: aliceblue;
+      --text-primary-color: #23262d;
+      --logo-color: #e6440e;
+    }
+  }
+</style>
