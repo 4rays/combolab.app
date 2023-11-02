@@ -1,8 +1,7 @@
 ---
-import Base from '../layouts/Base.astro';
-import Card from '../components/Card.astro';
-
-const today = new Date();
+import Base from '@layouts/Base.astro';
+import Card from '@components/Card.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <Base title="Four Rays | Home">
@@ -25,7 +24,7 @@ const today = new Date();
     </p>
     <ul role="list" class="link-card-grid">
       <Card
-      href="/"
+      href="/combolab"
       title="Combolab"
       body="A reference app for creating and sharing Street Fighter 6™ combos."
       image="combolab.png"
@@ -37,11 +36,7 @@ const today = new Date();
       />
     </ul>
   </main>
-  <footer>
-    <p>
-      &copy; 2020-{today.getFullYear()} Four Rays AB. Made with 🍵 in Stockholm.
-    </p>
-  </footer>
+  <Footer />
 </Base>
 
 <style>
@@ -51,10 +46,6 @@ const today = new Date();
   }
 
   main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
     color: var(--text-primary-color);
     font-size: 20px;
     line-height: 1.6;
@@ -70,6 +61,12 @@ const today = new Date();
     stroke-dasharray: 200;
     stroke-dashoffset: 400;
     animation: outline 10s ease-out infinite;
+  }
+
+  .text-gradient {
+    font-weight: 200;
+    margin-top: .5em;
+    display: block;
   }
 
   @keyframes outline {
@@ -115,12 +112,4 @@ const today = new Date();
     padding: 0;
   }
 
-  footer {
-    padding: 5rem 1rem 2rem;
-    letter-spacing: .1em;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-primary-color);
-    opacity: 0.8;
-  }
 </style>

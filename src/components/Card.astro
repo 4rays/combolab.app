@@ -30,17 +30,19 @@ const { href, title, body, image } = Astro.props;
     background-size: 400%;
     border-radius: 7px;
     box-shadow: inset 0 0 0 1px rgba(250, 250, 250, 0.1);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
     list-style: none;
     padding: 1px;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    letter-spacing: .08rem;
   }
 
   .link-card > a {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     text-decoration: none;
-    line-height: 1.4;
+    line-height: 1.5;
     padding: calc(1.5rem - 1px);
     border-radius: 8px;
     color: var(--text-primary-color);
@@ -49,7 +51,7 @@ const { href, title, body, image } = Astro.props;
   }
 
   .link-card img {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     width: 64px;
     height: auto;
     border-radius: 16px;
@@ -57,14 +59,17 @@ const { href, title, body, image } = Astro.props;
 
   h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.25em;
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    font-weight: 400;
   }
 
   p {
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 1em;
+    font-weight: 300;
+    opacity: 0.8;
   }
   
   .link-card:is(:hover, :focus-within) {

@@ -1,0 +1,193 @@
+---
+import Base from '@layouts/Base.astro';
+const today = new Date();
+---
+<Base title="Combolab: Metro City Edition">
+  <main>
+    <img class="screenshot" src="/combolab/screenshot.png" alt="Combolab Screenshot">
+
+    <header>
+      <h1>Combolab</h1>
+      <p class="subtitle">A Street Fighter 6 Reference App</p>
+    </header>
+
+    <div class="download-section">
+      <a href='https://play.google.com/store/apps/details?id=net.four.rays.combolab&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Explore Moves</h3>
+        <p>Get a detailed, up-to-date rundown of all moves and commands (Classic mode only).</p>
+      </div>
+      <div class="feature">
+        <h3>Frame Data</h3>
+        <p>Gain an edge over your opponents by understanding the ins-and-outs of frame advantage and disadvantage.</p>
+      </div>
+      <div class="feature">
+        <h3>Manage Combos</h3>
+        <p>Manage your own combo list, add notes and other metadata to keep things tidy, and keep tabs on your practice progress!</p>
+      </div>
+      <div class="feature">
+        <h3>Private & Offline</h3>
+        <p>No internet? No problem. Combolab is fully functional offline. It also doesn't gather any of your personal data.</p>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p>
+      The <em>Street Fighter</em> name, character names, artwork, and move names are all registered trademarks or trademarks of CAPCOM CO., LTD. Combolab is not affiliated with, endorsed, sponsored, or specifically approved by CAPCOM CO., LTD.
+    </p>
+    <br>
+    <p>
+      &copy; 2020-{today.getFullYear()} Four Rays AB.
+    </p>
+  </footer>
+</Base>
+
+<style>
+  html {
+    font-family: system-ui, sans-serif;
+    background: 
+      linear-gradient(
+        -200deg,
+        rgba(255, 213, 0, 0.8),
+        rgba(183, 0, 255, 0.9)
+      ),
+      url('/combolab/background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+  body {
+    min-height: 100vh;
+    backdrop-filter: blur(5px); 
+  }
+
+  main {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .screenshot {
+    max-width: 30rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: -9rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 6px 6px 0px rgb(134, 29, 255);
+    margin: 0;
+  }
+
+  .subtitle {
+    background-color: black;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0 2rem;
+    transform: rotate(-2deg);
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature {
+    flex: 1 1 20rem;
+    margin: .5rem;
+    padding: 2rem;
+    background-color: rgba(80, 0, 185, 0.6);
+    background: linear-gradient(
+      rgba(80, 0, 185, 0.4),
+      rgba(80, 0, 185, 0.8)
+    );
+    border-radius: 1rem;
+    text-align: center;
+
+    &:nth-child(2n) {
+      background-color: rgba(0, 0, 0, 0.6);
+      background: linear-gradient(
+        rgba(12, 126, 255, 0.6),
+        rgb(0, 98, 210)
+      );
+    }
+
+    &:nth-child(3n) {
+      background-color: rgba(0, 0, 0, 0.6);
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgb(0, 0, 0, 1)
+      );
+    }
+
+    &:nth-child(4n) {
+      background-color: rgba(0, 0, 0, 0.6);
+      background: linear-gradient(
+        rgb(255, 106, 0, .6),
+        rgb(202, 34, 0)
+      );
+    }
+
+    @media screen and (max-width: 600px) {
+      flex: 1 1 100%;
+    }
+  }
+
+  h3 {
+    color: rgb(255, 213, 150);
+    font-size: .9rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: .6rem;
+    opacity: .8;
+  }
+
+  .feature p {
+    font-size: .9rem;
+    margin: 0;
+    font-weight: normal;
+    text-shadow: 0 0 6px rgb(182, 118, 255);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.3;
+  }
+
+  .download-section {
+    text-align: center;
+    margin: 3rem auto;
+
+    & a {
+      display: inline-block;
+    }
+
+    & img {
+      max-width: 18rem;
+    }
+  }
+
+  footer {
+    padding: 5rem 1rem 2rem;
+    letter-spacing: .1em;
+    text-align: center;
+    font-size: 0.6rem;
+    max-width: 30rem;
+    margin: auto;
+    text-transform: uppercase;
+    color: yellow;
+  }
+</style>
