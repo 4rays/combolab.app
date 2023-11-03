@@ -4,14 +4,18 @@ import {SITE_TITLE, SITE_DESCRIPTION} from "@consts";
 interface Props {
   title?: string;
   description?: string;
+  previewImage?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 let {
   title = SITE_TITLE, 
-  description = SITE_DESCRIPTION
+  description = SITE_DESCRIPTION,
+  previewImage,
 } = Astro.props;
+
+const previewImageURL = previewImage ? new URL(previewImage, Astro.site) : undefined;
 ---
 
 <!DOCTYPE html>
@@ -64,6 +68,10 @@ let {
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+
+    {previewImageURL && (
+      <meta property="og:image" content={previewImageURL} />
+    )}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />

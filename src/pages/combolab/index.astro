@@ -3,7 +3,11 @@ import Base from '@layouts/Base.astro';
 const today = new Date();
 const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.rays.combolab"
 ---
-<Base title="Combolab: Metro City Edition">
+<Base 
+  title="Combolab: Metro City Edition" 
+  description="A reference app for Street Fighter 6 with frame data, move commands, and custom combo lists.",
+  previewImage="/combolab/cover.jpg"
+>
   <main>
     <img class="screenshot" src="/combolab/screenshot.png" alt="Combolab Screenshot">
 
@@ -84,7 +88,7 @@ html {
       rgba(0, 0, 0, .8),
       rgba(0, 0, 0, 0)
     ),
-    url('/combolab/background.png') no-repeat center center fixed; 
+    url('/combolab/background.jpg') no-repeat center center fixed; 
   background-size: cover;
 
   @media (--small-viewport) {
@@ -99,7 +103,7 @@ html {
         rgba(0, 0, 0, .5) 98%,
         rgba(0, 0, 0, .2)
       ),
-      url('/combolab/background.png') no-repeat center center fixed; 
+      url('/combolab/background.jpg') no-repeat center center fixed; 
     background-size: cover;
   }
 }
@@ -132,7 +136,7 @@ header {
 .logo-container {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   margin: 4rem;
 
   & span {
