@@ -240,9 +240,13 @@ h3 {
 .download-section {
   display: flex;
   justify-content: center;
-  margin: 3rem auto;
+  margin: 6rem auto;
   max-width: 30rem;
   flex-wrap: wrap;
+
+  @media (--small-viewport) {
+    margin: 3rem auto;
+  }
 
   & a {
     margin: 0 auto;
