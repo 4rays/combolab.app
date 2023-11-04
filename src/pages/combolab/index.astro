@@ -78,7 +78,12 @@ const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.r
 
 html {
   font-family: system-ui, sans-serif;
-  background-color: black;
+  background: rgb(134, 29, 255);
+}
+
+body {
+  min-height: 100vh;
+  backdrop-filter: blur(2px); 
   background: 
     linear-gradient(
       90deg,
@@ -92,25 +97,16 @@ html {
   background-size: cover;
 
   @media (--small-viewport) {
+    border-radius: 1rem;
     background: 
       linear-gradient(
         90deg,
-        rgba(0, 0, 0, .2),
-        rgba(0, 0, 0, .5) 2%,
-        rgba(0, 0, 0, .8) 18%,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, .8) 82%,
-        rgba(0, 0, 0, .5) 98%,
-        rgba(0, 0, 0, .2)
+        rgba(0, 0, 0, .8),
+        rgba(0, 0, 0, .8)
       ),
       url('/combolab/background.jpg') no-repeat center center fixed; 
     background-size: cover;
   }
-}
-
-body {
-  min-height: 100vh;
-  backdrop-filter: blur(2px); 
 }
 
 main {
@@ -126,6 +122,10 @@ main {
   margin: 0 auto;
   margin-top: -9rem;
   width: 100%;
+
+  @media (--small-viewport) {
+    margin-top: -6.5rem;
+  }
 }
 
 header {
