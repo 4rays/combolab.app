@@ -34,4 +34,4 @@ The courts of Sweden shall have exclusive jurisdiction to settle any dispute or 
 
 ## 7. Contact Information
 
-If you have any questions about this EULA, please contact us at contact@combolab.4rays.net.
+If you have any questions about this EULA, please contact us at <contact@combolab.4rays.net>.

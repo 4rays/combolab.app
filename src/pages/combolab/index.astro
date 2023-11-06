@@ -1,15 +1,28 @@
 ---
-import Base from '@layouts/Base.astro';
+import { t, changeLanguage } from "i18next";
+import Base from "@layouts/Base.astro";
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = "en" } = Astro.props;
+changeLanguage(locale);
+
+const screenshot = locale === "ja" ? "/combolab/screenshot-ja.png" : "/combolab/screenshot.png";
+
+const legalPagesPath = locale === "ja" ? "/ja/combolab" : "/combolab";
+
 const today = new Date();
-const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.rays.combolab"
+const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.rays.combolab";
 ---
 <Base 
-  title="Combolab: Metro City Edition" 
-  description="A reference app for Street Fighter 6 with frame data, move commands, and custom combo lists.",
+  title={t("combolab.title")}
+  description={t("combolab.description")}
   previewImage="/combolab/cover.jpg"
 >
   <main>
-    <img class="screenshot" src="/combolab/screenshot.png" alt="Combolab Screenshot">
+    <img class="screenshot" src={screenshot} alt="Combolab Screenshot">
 
     <header>
       <div class="logo-container">
@@ -17,50 +30,50 @@ const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.r
         <h1 class="logotype">Combolab</h1>
       </div>
       <h2 class="subheadline">
-        Metro City Edition
+        {t("combolab.subheadline")}
       </h2>
-      <p class="tagline">A Street Fighter 6 reference app.</p>
+      <p class="tagline">{t("combolab.intro")}</p>
     </header>
 
     <div class="download-section">
       <a href={googlePlayLink}><img alt="Get it on Google Play" src="/google-play.png" /></a>
 
       <div class="coming-soon">
-          iOS Version
+          {t("combolab.iosVersion")}
           <br>
-          Coming Soon!
+          {t("combolab.comingSoon")}
       </div>
     </div>
 
     <div class="features">
       <div class="feature">
-        <h3>Explore Moves</h3>
-        <p>Get a detailed, up-to-date rundown of all moves and commands (Classic mode only).</p>
+        <h3>{t("combolab.exploreMoves")}</h3>
+        <p>{t("combolab.exploreMovesDescription")}</p>
       </div>
       <div class="feature">
-        <h3>Frame Data</h3>
-        <p>Gain an edge over your opponents by understanding the ins-and-outs of frame advantage and disadvantage.</p>
+        <h3>{t("combolab.frameData")}</h3>
+        <p>{t("combolab.frameDataDescription")}</p>
       </div>
       <div class="feature">
-        <h3>Manage Combos</h3>
-        <p>Manage your own combo list, add notes and other metadata to keep things tidy, and keep tabs on your practice progress!</p>
+        <h3>{t("combolab.manageCombos")}</h3>
+        <p>{t("combolab.manageCombosDescription")}</p>
       </div>
       <div class="feature">
-        <h3>Private & Offline</h3>
-        <p>No internet? No problem. Combolab is fully functional offline. It also doesn't gather any of your personal data.</p>
+        <h3>{t("combolab.privateOffline")}</h3>
+        <p>{t("combolab.privateOfflineDescription")}</p>
       </div>
     </div>
 
   </main>
   <footer>
     <p>
-      The <em>Street Fighter</em> name, character names, artwork, and move names are all registered trademarks or trademarks of CAPCOM CO., LTD. Combolab is not affiliated with, endorsed, sponsored, or specifically approved by CAPCOM CO., LTD.
+      {t("combolab.copyrightNotice")}
     </p>
     <br>
     <p class="legal p-2">
-      <a class="underline" href="/combolab/privacy">Privacy Policy</a> &bull;
-      <a class="underline" href="/combolab/terms">Terms of Use</a> &bull;
-      <a class="underline" href="/combolab/eula">EULA</a>
+      <a class="underline" href={`${legalPagesPath}/privacy`}>{t("combolab.privacyPolicy")}</a> &bull;
+      <a class="underline" href={`${legalPagesPath}/terms`}>{t("combolab.termsOfUse")}</a> &bull;
+      <a class="underline" href={`${legalPagesPath}/eula`}>{t("combolab.eula")}</a>
     </p>
     <p>
       &copy; 2020-{today.getFullYear()} Four Rays AB.
@@ -98,7 +111,7 @@ body {
       rgba(0, 0, 0, .8),
       rgba(0, 0, 0, 0)
     ),
-    url('/combolab/background.jpg') no-repeat center center fixed; 
+    url("/combolab/background.jpg") no-repeat center center fixed; 
   background-size: cover;
 
   @media (--small-viewport) {
@@ -109,7 +122,7 @@ body {
         rgba(0, 0, 0, .8),
         rgba(0, 0, 0, .8)
       ),
-      url('/combolab/background.jpg') no-repeat center center fixed; 
+      url("/combolab/background.jpg") no-repeat center center fixed; 
     background-size: cover;
   }
 }
@@ -157,7 +170,7 @@ header {
   color: var(--color-tertiary);
   font-size: 5rem;
   font-weight: bold;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1;
   text-shadow: 
     .05em .05em 0 rgb(var(--color-secondary-component), .6),
@@ -209,7 +222,7 @@ header {
 
   & p {
     clor: rgb(211, 173, 255);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: .8rem;
     font-weight: normal;
     line-height: 1.5;

@@ -2,10 +2,13 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
+    "jsx": "preserve",
+    "verbatimModuleSyntax": true,
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@consts": ["src/consts.ts"],
+      "@pages/*": ["src/pages/*"],
     },
     "strictNullChecks": true
   }

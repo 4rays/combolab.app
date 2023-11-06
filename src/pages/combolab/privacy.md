@@ -9,7 +9,7 @@ title: "Combolab | Privacy Policy"
 
 ## 1. Introduction
 
-We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at contact@combolab.4rays.net.
+We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <contact@combolab.4rays.net>.
 
 ## 2. Information We Collect
 
@@ -45,4 +45,4 @@ We may update our Privacy Policy from time to time. We will notify you of any ch
 
 ## 10. Contact Us
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at contact@combolab.4rays.net.
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <contact@combolab.4rays.net>.

@@ -33,7 +33,7 @@ These materials are used under the principle of fair use for the purpose of prov
 
 All trademarks, logos, and service marks displayed within the app are the property of their respective owners. The app does not grant any license or right to use these trademarks without the explicit permission of the owners.
 
-If you believe that your copyrighted work has been infringed upon by the app, please contact us at contact@combolab.4rays.net.
+If you believe that your copyrighted work has been infringed upon by the app, please contact us at <contact@combolab.4rays.net>.
 
 ## 6. Limitation of Liability
 
@@ -46,4 +46,4 @@ The courts of Sweden shall have exclusive jurisdiction to settle any dispute or 
 
 ## 8. Contact Us
 
-If you have any questions or suggestions about our Terms & Conditions, do not hesitate to contact us at contact@combolab.4rays.net.
+If you have any questions or suggestions about our Terms & Conditions, do not hesitate to contact us at <contact@combolab.4rays.net>.
