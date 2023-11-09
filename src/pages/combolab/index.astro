@@ -9,9 +9,10 @@ interface Props {
 const { locale = "en" } = Astro.props;
 changeLanguage(locale);
 
+const otherLanguagePath = locale === "ja" ? "/combolab" : "/ja/combolab";
+const pagePath = locale === "ja" ? "/ja/combolab" : "/combolab";
+const previewImage = locale === "ja" ? "/combolab/cover-ja.jpg" : "/combolab/cover.jpg";
 const screenshot = locale === "ja" ? "/combolab/screenshot-ja.png" : "/combolab/screenshot.png";
-
-const legalPagesPath = locale === "ja" ? "/ja/combolab" : "/combolab";
 
 const today = new Date();
 const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.rays.combolab";
@@ -19,7 +20,7 @@ const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.r
 <Base 
   title={t("combolab.title")}
   description={t("combolab.description")}
-  previewImage="/combolab/cover.jpg"
+  previewImage={previewImage}
 >
   <main>
     <img class="screenshot" src={screenshot} alt="Combolab Screenshot">
@@ -63,7 +64,6 @@ const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.r
         <p>{t("combolab.privateOfflineDescription")}</p>
       </div>
     </div>
-
   </main>
   <footer>
     <p>
@@ -71,9 +71,10 @@ const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.r
     </p>
     <br>
     <p class="legal p-2">
-      <a class="underline" href={`${legalPagesPath}/privacy`}>{t("combolab.privacyPolicy")}</a> &bull;
-      <a class="underline" href={`${legalPagesPath}/terms`}>{t("combolab.termsOfUse")}</a> &bull;
-      <a class="underline" href={`${legalPagesPath}/eula`}>{t("combolab.eula")}</a>
+      <a class="underline" href={otherLanguagePath}>{t("combolab.otherLanguage")}</a> &bull;
+      <a class="underline" href={`${pagePath}/privacy`}>{t("combolab.privacyPolicy")}</a> &bull;
+      <a class="underline" href={`${pagePath}/terms`}>{t("combolab.termsOfUse")}</a> &bull;
+      <a class="underline" href={`${pagePath}/eula`}>{t("combolab.eula")}</a>
     </p>
     <p>
       &copy; 2020-{today.getFullYear()} Four Rays AB.

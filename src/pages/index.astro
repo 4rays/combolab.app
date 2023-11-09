@@ -13,8 +13,9 @@ changeLanguage("en");
     <CompanyLogo />
     <h1><span class="text-gradient">FOUR RAYS</span></h1>
     <p class="intro">
-      An indie solopreneurship by <a href="https://redalemeden.com">Reda Lemeden</a> exploring platform-native app development and design.
-    </p>
+      An indie solopreneurship focusing on platform-native <em>app development and design</em>.
+      Currently developing products related to <em>video games</em> and <em>language learning</em>.
+      </p>
     <ul role="list" class="link-card-grid">
       <Card
         href="/combolab"
@@ -74,14 +75,17 @@ h1 {
 }
 
 .intro {
-  margin-bottom: 2rem;
+  border-radius: 8px;
   border: 2px solid rgba(var(--accent), 25%);
   color: rgba(var(--accent));
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 600;
+  letter-spacing: .1rem;
+  margin-bottom: 2rem;
   padding: 1.5rem 3rem;
-  border-radius: 8px;
   text-align: center;
+
+  em {
+    text-decoration: underline;
+  }
 
   @media (--small-viewport) {
     font-size: 1rem;
