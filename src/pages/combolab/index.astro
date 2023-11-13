@@ -13,9 +13,13 @@ const otherLanguagePath = locale === "ja" ? "/combolab" : "/ja/combolab";
 const pagePath = locale === "ja" ? "/ja/combolab" : "/combolab";
 const previewImage = locale === "ja" ? "/combolab/cover-ja.jpg" : "/combolab/cover.jpg";
 const screenshot = locale === "ja" ? "/combolab/screenshot-ja.png" : "/combolab/screenshot.png";
+const appStoreBadge = locale === "ja" ? "/app-store-ja.svg" : "/app-store-en.svg";
 
 const today = new Date();
 const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.rays.combolab";
+const appStoreLink = locale === "ja"
+ ? "https://apps.apple.com/jp/app/combolab/id6471535638?l=ja-JP"
+ : "https://apps.apple.com/us/app/combolab/id6471535638?l=en-US";
 ---
 <Base 
   title={t("combolab.title")}
@@ -37,13 +41,12 @@ const googlePlayLink = "https://play.google.com/store/apps/details?id=net.four.r
     </header>
 
     <div class="download-section">
-      <a href={googlePlayLink}><img alt="Get it on Google Play" src="/google-play.png" /></a>
-
-      <div class="coming-soon">
-          {t("combolab.iosVersion")}
-          <br>
-          {t("combolab.comingSoon")}
-      </div>
+      <a href={googlePlayLink}>
+        <img alt="Get it on Google Play" src="/google-play.png" />
+      </a>
+      <a href={appStoreLink}>
+        <img alt="Download on the App Store" src={appStoreBadge} />
+      </a>
     </div>
 
     <div class="features">
@@ -270,21 +273,6 @@ h3 {
   & a {
     margin: 0 auto;
     flex: 0 1 calc(50% - 1rem);
-  }
-
-  & .coming-soon {
-    border-radius: .5rem;
-    border: 1px solid var(--color-tertiary);
-    color: var(--color-tertiary);
-    display: flex;
-    flex: 0 1 calc(50% - 1rem);
-    font-size: .9rem;
-    font-weight: normal;
-    justify-content: center;
-    letter-spacing: .1em;
-    opacity: .7;
-    padding: .5rem;
-    text-align: center;
   }
 
   @media (--small-viewport) { /* Add this block */
