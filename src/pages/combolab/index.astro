@@ -119,7 +119,6 @@ body {
   background-size: cover;
 
   @media (--small-viewport) {
-    border-radius: 1rem;
     background: 
       linear-gradient(
         90deg,
@@ -225,11 +224,11 @@ header {
   text-align: center;
 
   & p {
-    clor: rgb(211, 173, 255);
-    font-family: "Courier New", Courier, monospace;
+    color: rgb(226, 200, 255);
     font-size: .8rem;
     font-weight: normal;
     line-height: 1.5;
+    letter-spacing: .05em;
     margin: 0;
   }
 
@@ -262,6 +261,7 @@ h3 {
 .download-section {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 6rem auto;
   max-width: 30rem;
   flex-wrap: wrap;
@@ -273,19 +273,6 @@ h3 {
   & a {
     margin: 0 auto;
     flex: 0 1 calc(50% - 1rem);
-  }
-
-  @media (--small-viewport) { /* Add this block */
-    & a {
-      flex: 0 1 100%;
-      max-width: 16rem;
-    }
-
-    & .coming-soon {
-      flex: 1 1 100%;
-      max-width: 16rem;
-      margin-top: 1rem;
-    }
   }
 }
 
