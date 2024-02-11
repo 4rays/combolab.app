@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://4rays.net",
+  site: "https://combolab.app",
   integrations: [mdx(), sitemap(), tailwind(), astroI18next()],
 });
