@@ -92,10 +92,12 @@ const appStoreLink = locale === "ja"
   --color-primary-component: 134, 29, 255;
   --color-secondary-component: 255, 106, 0;
   --color-tertiary-component: 255, 213, 150;
+  --color-quaternary-component: 64, 193, 249;
 
   --color-secondary: rgb(255, 106, 0);
   --color-primary: rgb(134, 29, 255);
   --color-tertiary: rgb(255, 213, 150);
+  --color-quaternary: rgb(64, 193, 249);
 }
 
 html {
@@ -108,14 +110,13 @@ body {
   backdrop-filter: blur(2px); 
   background: 
     linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, .8),
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, .8),
-      rgba(0, 0, 0, 0)
-    ),
-    url("/background.jpg") no-repeat center center fixed; 
+      45deg,
+      rgba(0, 0, 0, 1) 50%,
+      var(--color-primary) 50%,
+      var(--color-primary) 65%,
+      var(--color-secondary) 65%,
+      var(--color-secondary) 75%
+    );
   background-size: cover;
 
   @media (--small-viewport) {
@@ -141,7 +142,7 @@ main {
   max-width: 30rem;
   display: block;
   margin: 0 auto;
-  margin-top: -9rem;
+  margin-top: 2rem;
   width: 100%;
 
   @media (--small-viewport) {
@@ -186,7 +187,7 @@ header {
 }
 
 .subheadline {
-  color: var(--color-secondary);
+  color: var(--color-tertiary);
   font-size: 1.2rem;
   font-weight: normal;
   letter-spacing: .1em;
@@ -214,14 +215,14 @@ header {
 }
 
 .feature {
-  background-color: black;
+  background-color: rgba(30, 30, 30, 0.5);
   border-radius: 1rem;
-  box-shadow: 0 0 4rem var(--color-primary);
-  border: 2px solid rgb(211, 173, 255);
   flex: 1 1 20rem;
   margin: .5rem;
   padding: 1.5rem;
   text-align: center;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
 
   & p {
     color: rgb(226, 200, 255);
