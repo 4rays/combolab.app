@@ -10,7 +10,7 @@ const { locale = "en" } = Astro.props;
 changeLanguage(locale);
 
 const otherLanguagePath = locale === "ja" ? "/" : "/ja";
-const pagePath = locale === "ja" ? "/ja" : "/";
+const pagePath = locale === "ja" ? "/ja/" : "/";
 const previewImage = locale === "ja" ? "/cover-ja.jpg" : "/cover.jpg";
 const screenshot = locale === "ja" ? "/screenshot-ja.png" : "/screenshot.png";
 const appStoreBadge = locale === "ja" ? "/app-store-ja.svg" : "/app-store-en.svg";
@@ -75,9 +75,9 @@ const appStoreLink = locale === "ja"
     <br>
     <p class="legal p-2">
       <a class="underline" href={otherLanguagePath}>{t("combolab.otherLanguage")}</a> &bull;
-      <a class="underline" href={`${pagePath}/privacy`}>{t("combolab.privacyPolicy")}</a> &bull;
-      <a class="underline" href={`${pagePath}/terms`}>{t("combolab.termsOfUse")}</a> &bull;
-      <a class="underline" href={`${pagePath}/eula`}>{t("combolab.eula")}</a>
+      <a class="underline" href={`${pagePath}privacy`}>{t("combolab.privacyPolicy")}</a> &bull;
+      <a class="underline" href={`${pagePath}terms`}>{t("combolab.termsOfUse")}</a> &bull;
+      <a class="underline" href={`${pagePath}eula`}>{t("combolab.eula")}</a>
     </p>
     <p>
       &copy; 2020-{today.getFullYear()} Four Rays AB.
