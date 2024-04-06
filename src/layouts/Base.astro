@@ -59,7 +59,6 @@ const previewImageURL = previewImage ? new URL(previewImage, Astro.site) : undef
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
-    <meta name="title" content={title} />
     <meta name="description" content={description} />
     
     <!-- Additional Meta Tags -->
@@ -71,15 +70,16 @@ const previewImageURL = previewImage ? new URL(previewImage, Astro.site) : undef
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
 
-    {previewImageURL && (
-      <meta property="og:image" content={previewImageURL} />
-    )}
-
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+
+    {previewImageURL && (
+      <meta property="og:image" content={previewImageURL} />
+      <meta property="twitter:image" content={previewImageURL} />
+    )}
   </head>
   <body>
     <slot />
