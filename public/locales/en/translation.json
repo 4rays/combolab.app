@@ -1,9 +1,8 @@
 {
   "combolab": {
     "title": "Combolab: Metro City Edition",
-    "description": "A reference app for Street Fighter 6 with frame data and combo creation and sharing.",
+    "description": "A Combo Tracking & Sharing App for Industrious Street Fighter 6 Players",
     "subheadline": "Metro City Edition",
-    "intro": "Street Fighter 6 Frame Data and Combo Sharing App",
     "iosVersion": "iOS Version",
     "comingSoon": "Coming Soon!",
     "exploreMoves": "Explore Moves",
